@@ -1,0 +1,108 @@
+%!TEX TS-program = lualatex
+\documentclass[a4paper, extended]{comcv}
+
+\usepackage[english]{babel}
+\usepackage{fontspec}
+
+\title{Vikrom's CV}
+\fullname{Vikrom}{Narula}{}
+\cvtitle{Student, Programmer, Golfer, Free-diver}
+\website{https://narula2000.github.io}{narula2000.github.io}
+\email{vikrom.nar@gmail.com}
+\github{https://github.com/narula2000}{GitHub}
+\linkedin{https://www.linkedin.com/in/vikrom-narula-36aa33184}{LinkedIn}
+\currentdate{\today}
+
+\begin{document}
+\section{Experiences}
+\combosection{\href{https://www.agoda.com/}{Agoda}}{Internship, Finance Back-end Team}{Apr 2022-Aug 2022}{
+  \begin{tightlist}
+    \item Migrate .NET Framework to .NET Core
+    \item Migrate from Github, Teamcity to Gitlab and it's CI/CD
+    \item Implement internal API endpoint to streamline manual workflow, and notify via Slack
+    \item Change database usage from Hadoop to Microsoft SQL server for an API endpoint
+  \end{tightlist}
+}
+
+\combosection{\href{https://thegang.tech/?lang=en}{The Gang Technology}}{Part-time, Back-end Developer}{Jan 2022-Feb 2022}{
+  \begin{tightlist}
+    \item Implement API endpoint to query user information and parse to xlsx format
+    \item Implement API endpoint to query user information and output as pdf format
+    \item Implement function to parse user information to government standard encoding
+    \item Implement schema to accept government standard encoding
+  \end{tightlist}
+}
+
+\combosection{\href{https://adhero.co.th}{Ad Hero}}{Full-time, Part-time, Back-end Developer}{Feb 2020-Dec 2020}{
+  \begin{tightlist}
+    \item Implement API endpoint to interact with service provider API
+    \item Encrypt and decrypt API data for some service provider
+  \end{tightlist}
+}
+
+\section{Projects}
+\combosection{\href{https://github.com/narula2000/crypto-watcher}{Crypto Currency Analyser}}
+  {Python, Pandas, BeautifulSoup}{}{
+  \indent Scrap top market capitalization crypto currency to compare current price
+  with average price within some time gap and show percentage change.
+}
+
+\combosection{\href{https://github.com/narula2000/SteamReviewAnalysisMLProject.git}{Python Machine Learning: NLP Steam Games Reviews}}
+  {Python, Sklearn, Pandas, Numpy, Matplotlib}{}{
+  \indent Analysis of stream review to see if the given review is good or bad,
+  by using different vectorization and activation functions effects the model.
+}
+
+\combosection{\href{https://github.com/narula2000/GolfTournament-Webapp}{Golf Tournament Application}}
+  {Node.js, JavaScript, React, React Native, Firebase, Chakra}{}{
+  \indent Create a tournament application for competitor to keep of theirs and
+  opponent scorecard, with easy to use scorecard and intuitive scorecard display.
+}
+
+\combosection{\href{https://github.com/narula2000/BTS-MRT-Transportation-API}{Public Transportation API: BTS \& MRT map API}}
+  {Python, Django, Docker}{}{
+  \indent Create API for user to query to path between two stations across BTS
+  and MRT, by using graphs and DFS.
+}
+
+\vspace{\topsep}
+\section{Skills}
+\combosection{Programming}{}{}{
+  \begin{tightlist}
+    \item Python (2+ years)
+    \item JavaScript/TypeScript (1+ years)
+    \item Basic - Rust, Scala, SQL, R, HTML, CSS
+  \end{tightlist}
+}
+
+\combosection{Tools/Others}{}{}{
+  \begin{tightlist}
+    \item Scripting(Bash, Python), Git, CI/CD, Linux/Unix, Docker
+    \item \LaTeX, Visual Studio Code, IntelliJ IDEA, Vim, Nvim, Tmux
+  \end{tightlist}
+}
+
+\section{Education}
+\combosection{\href{https://muic.mahidol.ac.th/eng}{Mahidol University International College}}{Bachelor degree in Computer Science }{2018-2022}{CGPA 3.10
+
+  \ifextended
+    Courses - Advanced Calculus, Statistics, Discrete Math, Algorithm Analysis, Digital Logic Design, Database Management Systems, Data Structures, Operating Systems, Computer Networks, Deep learning, Blockchain
+  \else
+  \fi
+  }
+
+\vspace{\topsep}
+\combosection{\href{https://www.repsbanchang.com}{Rayong English Programme School}}{Bi-lingual}{2007-2018}{CGPA 3.4
+
+    Thailand Educational Standard
+}
+
+\vspace{\topsep}
+\section{Certifications}
+\combosection{\href{https://courses.cognitiveclass.ai/certificates/2552ddac4a7b442ba08a882913fde68e}{Hyperledger-Farbric}}{IBM-Blockchain}{2021}{}
+
+\combosection{\href{https://freecodecamp.org/certification/fccfd875aea-9c57-4c5d-a3c3-541bdb54fdb7/javascript-algorithms-and-data-structures}{JavaScript Algorithms and Data Structures}}{FreeCodeCamp-Javascript}{2021}{}
+
+\combosection{\href{https://www.coursera.org/account/accomplishments/specialization/certificate/KPATQ89DEUJC}{Deep Learning Specialization}}{Coursera-DeepLearning}{2020}{}
+
+\end{document}

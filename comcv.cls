@@ -1,15 +1,4 @@
-%% comcv.cls
-%% Copyright 2021 Avinal Kumar
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-
-% class options 
+% class options
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{comcv}[2021/01/21 Compact CV]
 
@@ -28,9 +17,9 @@
 
 % required packages - put more packages here
 \RequirePackage[top=0.5cm,left=1cm,right=1cm,bottom=1.2cm]{geometry} % Change Horizontal and Vertical margins
+\RequirePackage{fontspec} % custom fonts
 \RequirePackage{fontawesome} % fontawesome icons
 \RequirePackage[usenames,dvipsnames]{xcolor} % custom colors
-\RequirePackage{fontspec} % custom fonts
 \RequirePackage{array}
 \RequirePackage{totpages} % counts total pages
 \RequirePackage{fancyhdr} % fancy header, footer
@@ -43,7 +32,7 @@
 \definecolor{gray}{HTML}{555555} % color gray
 \definecolor{lightgray}{HTML}{999999} % color light gray, a shade of gray
 \definecolor{black}{HTML}{000000} % color black, also gray just deeper
-\definecolor{coralpink}{HTML}{FF706C} % color coral pink, ever seen a real coral, huh 
+\definecolor{coralpink}{HTML}{FF706C} % color coral pink, ever seen a real coral, huh
 
 % provide colors to your elements
 \colorlet{defaulttext}{black} % default text color
@@ -68,27 +57,27 @@
 ]{Roboto-Light.ttf}
 
 \newfontfamily\regular[
-    Path = fonts/, 
+    Path = fonts/,
     Color=regulartext
 ]{Roboto-Regular.ttf}
 
 \newfontfamily\light[
-    Path = fonts/, 
+    Path = fonts/,
     Color=regulartext
 ]{Roboto-Light.ttf}
 
 \newfontfamily\thin[
-    Path = fonts/, 
+    Path = fonts/,
     Color=defaulttext
 ]{Roboto-Thin.ttf}
 
 \newfontfamily\regularheader[
-    Path = fonts/, 
+    Path = fonts/,
     Color=headertext
 ]{Roboto-Regular.ttf}
 
 \newfontfamily\thinheader[
-    Path = fonts/, 
+    Path = fonts/,
     Color=headertext
 ]{Roboto-Thin.ttf}
 
@@ -118,7 +107,7 @@
 % redefining some commands
 \titlespacing{\section}{0pt}{0pt}{0pt} % remove space around sections
 \titleformat{\section}{
-    \fontsize{14pt}{16pt}\thinheader\bfseries\uppercase 
+    \fontsize{16pt}{16pt}\mediumheader\bfseries\uppercase
 }{}{0pt}{}
 
 
@@ -130,7 +119,7 @@
 
 % new command for writing subsection and descriptions
 \newcommand{\combosection}[4]{
-    \subsection{\textbf{#1}}
+    \subsection{#1}
     \ifx&#2&
     \else
     \Large\addfontfeatures{Color=linktext}{~|}
@@ -150,7 +139,7 @@
     }
 
     \def\comcv@email{\faEnvelope~\href{mailto:\comcv@mailid}{\comcv@mailid}}
-    
+
     \ifdefined\comcv@linkedinurl
     \ifx\comcv@linkedinurl\empty
         \def\comcv@linkedin{}
@@ -160,7 +149,7 @@
     \else
         \def\comcv@linkedin{}
     \fi
-    
+
     \ifdefined\comcv@githuburl
     \ifx\comcv@githuburl\empty
         \def\comcv@github{}
@@ -170,7 +159,7 @@
     \else
         \def\comcv@github{}
     \fi
-    
+
     \ifdefined\comcv@websiteurl
     \ifx\comcv@websiteurl\empty
         \def\comcv@website{}
@@ -209,7 +198,7 @@
             \horbar
             \vspace{-\topsep}
         \fi
-    
+
     \end{center}
 }
 
@@ -221,7 +210,7 @@
 \AtBeginDocument{
     \pagestyle{fancy}
     \fancyhead{}
-    \fancyfoot[C]{\footnotesize\light\comcv@firstname's Résumé, \comcv@date, \comcv@email} % footer text
+    \fancyfoot[C]{\footnotesize\light\comcv@firstname's Résumé, \comcv@date, \href{https://raw.githubusercontent.com/narula2000/resume/main/resume.pdf}{Download Résumé}} % footer text
     \fancyfoot[R]{\raggedleft\footnotesize\comcv@page} % page number and page link
     \renewcommand{\headrulewidth}{0em}
     \setlength\footskip{\baselineskip}
