@@ -118,16 +118,22 @@
 }{}{0pt}{}
 
 % new command for writing subsection and descriptions
-\newcommand{\combosection}[4]{
+\newcommand{\combosection}[5]{
     \subsection{#1}
     \ifx&#2&
     \else
-    \Large\addfontfeatures{Color=linktext}{~|}
-    \light\large{#2}
+      \Large\addfontfeatures{Color=linktext}{~|}
+      \light\large{#2}
+        \if\relax\detokenize{#3}\relax
+          &\light\normalsize{#3}
+        \else
+          \Large\addfontfeatures{Color=linktext}{~|}
+          &\light\normalsize{#3}
+        \fi
     \fi
-    \hfill{#3}
+    \hfill{#4}
     \linebreak
-    \normalsize{#4}
+    \normalsize{#5}
 }
 
 % header
