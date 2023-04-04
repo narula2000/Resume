@@ -21,7 +21,6 @@
 \RequirePackage{fontawesome} % fontawesome icons
 \RequirePackage[usenames,dvipsnames]{xcolor} % custom colors
 \RequirePackage{array}
-\RequirePackage{totpages} % counts total pages
 \RequirePackage{fancyhdr} % fancy header, footer
 \RequirePackage{titlesec} % formating sections, subsections
 \RequirePackage{hyperref} % for links and, please keep it as last package, add more packages above it
@@ -210,8 +209,6 @@
 
 % footer
 \newcommand*{\currentdate}[1]{\def\comcv@date{#1}}
-\def\comcv@totpages{~/~\regular\ref{TotPages}}
-\def\comcv@page{\light{Page~}\thepage\comcv@totpages}
 
 \AtBeginDocument{
     \pagestyle{fancy}
