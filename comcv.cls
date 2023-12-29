@@ -92,6 +92,8 @@
 
 \newcommand*{\email}[1]{\def\comcv@mailid{#1}} % email id and email text
 
+\newcommand*{\phone}[2]{\def\comcv@phoneid{#1}\def\comcv@phonetext{#2}} % phone number and phone text
+
 \newcommand*{\website}[2]{\def\comcv@websiteurl{#1}\def\comcv@websitetext{#2}} % website and website text
 
 \newcommand*{\github}[2]{\def\comcv@githuburl{#1}\def\comcv@githubtext{#2}} % github
@@ -145,6 +147,16 @@
 
     \def\comcv@email{\faEnvelope~\href{mailto:\comcv@mailid}{\comcv@mailid}}
 
+    \ifdefined\comcv@phoneid
+    \ifx\comcv@phoneid\empty
+        \def\comcv@phone{}
+    \else
+        \def\comcv@phone{\faPhone~\href{tel:\comcv@phoneid}{\comcv@phonetext}}
+    \fi
+    \else
+        \def\comcv@phone{}
+    \fi
+
     \ifdefined\comcv@linkedinurl
     \ifx\comcv@linkedinurl\empty
         \def\comcv@linkedin{}
@@ -185,7 +197,7 @@
 
         \ifdefined\comcv@title
         \ifx\comcv@title\empty
-            \large\light\comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
+            \large\light\comcv@email~~\comcv@phone~~\comcv@website~~\comcv@github~~\comcv@linkedin
             \vspace{-\topsep}
             \horbar
             \vspace{-\topsep}
@@ -194,11 +206,11 @@
             \vspace{-\topsep}
             \horbar
 
-            \comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
+            \comcv@email~~\comcv@phone~~\comcv@website~~\comcv@github~~\comcv@linkedin
             \vspace{-\topsep}
         \fi
         \else
-            \large\light\comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
+            \large\light\comcv@email~~\comcv@phone~~\comcv@website~~\comcv@github~~\comcv@linkedin
             \vspace{-\topsep}
             \horbar
             \vspace{-\topsep}
